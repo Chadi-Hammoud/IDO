@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDO | Log In</title>
+</head>
+
+<body>
+    <div class="d-flex flex-row">
+        <div class="col-sm-6 left-container">
+            <div class="row">
+                <img class="image-1" src="../../../assets/images/Logo.png" alt="Logo" />
+            </div>
+            <div class="row flex-row align">
+                <div class="col-sm-3">
+                    <img class="image-left" src="../../../assets/images/Woman.png" alt="Woman" />
+                </div>
+                <div class="col-sm-3 flex-row-reverse">
+                    <img class="image-right" src="../../../assets/images/Man.png" alt="Man" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 right-container">
+            <div class="row right-header">
+                <h1>Time to Work!</h1>
+            </div>
+            <form [formGroup] = "loginForm" (ngSubmit) = "loginSubmited()">
+                <div class="row row01">
+                    <div class="col">
+                        <label for="email" class="label-control">Email</label><br/>
+                        <input type="email" class="control" id="email" formControlName="email"/>
+                        <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">
+                            <p>Email is required</p>
+                        </div>
+                        <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.touched || Email.dirty) ">
+                            <p>Email is invalid</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row01">
+                    <div class="col">
+                        <label for="password" class="label-control">Password</label><br/>
+                        <input type="password" class="control" id="password" formControlName="password" />
+                        <div class="form-text text-danger" *ngIf="Password.errors?.['required']  && 
+                        (Password.touched || Password.dirty)">
+                            <p>Password is required</p>
+                        </div>
+                        <div class="form-text text-danger" *ngIf="Password.errors?.['minLength'] || Password.errors?.['maxLength']
+                        (Password.touched || Password.dirty)">
+                            <p>Password should be at least 8 and max 15 characters long.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row01">
+                    <div class="col">
+                        <button type="submit" class="btn-submit rounded-pill" [disabled]="loginForm.valid">submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

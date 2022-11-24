@@ -1,0 +1,34 @@
+nav{
+    top: 0px;
+    left: 0px;
+    height: 68px;
+    background: #232323 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 4px #15223214;
+}
+i{
+ background-color:#D1A8EC
+}
+
+.search{
+    fill:#D1A8EC
+}
+
+.quote{
+    top: 68px;
+    left: 0px;
+    height: 68px;
+    /* UI Properties */
+    background: transparent linear-gradient(180deg, #6E4C85 0%, #2D2B52 100%) 0% 0% no-repeat padding-box;
+}
+
+h3{
+    top: 92px;
+    left: 44px;
+    width: 344px;
+    height: 21px;
+    /* UI Properties */
+    text-align: left;
+    font: italic normal normal 18px/21px HelveticaNeue;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
